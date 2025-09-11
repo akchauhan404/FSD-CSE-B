@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Register Here</h1>
+    <form name="register"method="post" action="/register">
+        <label><input type="text" name="username" placeholder="Entewr the username"></label><br>
+        <label></label><input type="email" name="email" placeholder="Enter your email"></label><br>
+        <label><input type="number" name="phonenumber" placeholder="Enter your Mobile Number"></label><br>
+        <input type="date" name="dob" placeholder="Enter your date of birth">
+        <input type="radio" name="gender" value="M" checked>Male
+        <input type="radio" name="gender" value="F">Female
+        <br>
+        <label for="branch">branch</label>
+        <select name="branch">
+            <option value="CSE">CSE</option>
+            <option value="AIML">AIML</option>
+            <option value="DS">DS</option>
+            <option value="IT">IT</option>
+            <option value="CS">CS</option>
+        </select>
+        <br/>
+            <label for="sem">Sem</label>
+            <select name="sem">
+            <option value="1">I</option>
+            <option value="2">II</option>
+            <option value="3">III</option>
+            <option value="4">IV</option>
+            <option value="5">V</option>
+            <option value="6">VII</option>
+        </select><br>
+        <label for="address">Address</label>
+        <textarea rows="3" cols="30" placeholder="enter Current Address"></textarea><br>
+        <label for="certificate">Upload 12th certificate</label>
+        <input type="file" >
+        <br><button type="submit">Register</button> 
+        <button type="submit">Reset</button>
+    </form>
+</body>
+</html>
