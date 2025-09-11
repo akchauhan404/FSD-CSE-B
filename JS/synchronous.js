@@ -1,4 +1,4 @@
-function waitfortwoseconds()
+/*function waitfortwoseconds()
 {
     const ms=new Date().getTime()+8000;
     while(new Date().getTime()<ms);
@@ -33,4 +33,48 @@ sendemail();
 login();
 getData();
 displayData();
-console.log("other Application")
+console.log("other Application")*/
+
+//callback hell
+ 
+function register(cb){
+    setTimeout(()=>{
+        console.log("register end");
+        cb();
+    },2000)
+}
+function sendemail(cb){
+    setTimeout(()=>{
+        console.log("email end");
+        cb();
+    },2000)
+}
+function login(cb){
+    setTimeout(()=>{
+        console.log("login end");
+        cb();
+    },2000)
+}
+function getData(cb){
+    setTimeout(()=>{
+        console.log("data end");
+        cb();
+    },2000)
+}
+function displayData(){
+    setTimeout(()=>{
+        console.log("display end");
+    },2000)
+}
+
+register(()=>{
+    sendemail(()=>{
+        login(()=>{
+            getData(()=>{
+                displayData();
+            })
+        })
+    })
+})
+
+console.log("other Applications");
