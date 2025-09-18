@@ -1,28 +1,57 @@
-/*function register(){
-    console.log('register end')
-}
-function sendEmail(){
-    console.log('email end')
-}
-function login(){
-    console.log('login end')
-}
-function getData(){
-    console.log('getData end')
-}
-function displayData(){
-    console.log('display end')
-}
-function waitfortwoseconds()
-{
-    const ms=new Date().getTime()+2000;
-    while(new Date().getTime()<ms)
-}
-register();
-sendEmail();
-login();
-getData();
-displayData();*/
+// using promises
+function register() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log("register end");
+        resolve();
+      }, 2000);
+    });
+  }
+  
+  function sendEmail() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log("send email end");
+        resolve();
+      }, 3000);
+    });
+  }
+  
+  function login() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log("login end");
+        resolve();
+      }, 1000);
+    });
+  }
+  
+  function getData() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log("get data end");
+        resolve();
+      }, 2000);
+    });
+  }
+  
+  function displayData() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log("display data end");
+        resolve();
+      }, 2000);
+    });
+  }
 
+  console.log("call other application");
 
-// call using promise
+register()
+  .then(sendEmail)
+  .then(login)
+  .then(getData)
+  .then(displayData)
+  .then(() => {
+    console.log("All tasks finished");
+  })
+  .catch((err) => console.error("Error:", err));
