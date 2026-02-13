@@ -1,6 +1,6 @@
-/*const http = require('http');
-
-const myserver = http.createServer((req, res) => {
+const http = require('http');
+const fs=require('fs')
+/*const myserver = http.createServer((req, res) => {
 
     if (req.url === '/') {
         res.writeHead(200, { "Content-Type": "text/plain" });
@@ -29,3 +29,30 @@ const myserver = http.createServer((req, res) => {
 myserver.listen(8000, () => {
     console.log("server is running on port 8000");
 });*/
+//fs.writeFileSync("./cse-c.txt","hi we are coder in node")
+//const result=fs.readFileSync("./cse-c.txt","utf-8");
+//console.log(result);
+//fs.writeFile("./a.txt","Atul kumar chauhan",()=>{})
+/*fs.readFile("./a.txt","utf-8",(err,result)=>{
+    if(err)
+    {
+        console.log(err);
+    }
+    else{
+        console.log(result);
+    }
+})*/
+/*fs.writeFile("./b.txt","cse department",(err)=>{
+    if(err)
+    {
+        console.log(err);
+    }
+})*/
+
+//fs.appendFileSync("./b.txt"," Abes College")
+fs.appendFile("./b.txt","ghaziabad",(err)=>{
+    if(err)
+    {
+        console.log(err)
+    }
+})
