@@ -50,7 +50,17 @@ myserver.listen(8000, () => {
 })*/
 
 //fs.appendFileSync("./b.txt"," Abes College")
-fs.appendFile("./b.txt","ghaziabad",(err)=>{
+
+/*fs.appendFile("./b.txt","ghaziabad",(err)=>{
+    if(err)
+    {
+        console.log(err)
+    }
+})*/
+
+//fs.cpSync("./a.txt","./c.txt")
+//fs.cp("./b.txt","./c.txt",()=>{})
+fs.cp("./a.txt","./c.txt",(err)=>{
     if(err)
     {
         console.log(err)
