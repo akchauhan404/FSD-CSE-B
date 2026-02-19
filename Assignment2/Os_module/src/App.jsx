@@ -29,11 +29,50 @@ function App() {
     <>
       <h1>Work with OS</h1>
       <br/>
-      <div id="display">{data}</div>
-      <button onClick={UserInfo}>UserInfo</button>
-      <button onClick={cpu}>Cpu Arch</button><br/>
-      <button onClick={memory}>total memory</button>
-      <button onClick={platform}>platform</button>
+      <div id="display"
+       style={{
+        border: "1px solid black",
+        padding: "10px",
+        minHeight: "150px",
+        whiteSpace: "pre-wrap"
+      }}
+      >{data}</div>
+      <button 
+      style={{
+        padding:"10px",
+        margin:"50px",
+        color:"yellow"
+      }
+
+      }
+      onClick={UserInfo}>UserInfo</button>
+      <button 
+      style={{
+        padding:"10px",
+        margin:"50px",
+        color:"yellow"
+      }
+
+      }
+      onClick={cpu}>Cpu Arch</button><br/>
+      <button 
+      style={{
+        padding:"10px",
+        margin:"50px",
+        backgroundColor:"yellow"
+      }
+
+      }
+      onClick={memory}>total memory</button>
+      <button 
+      style={{
+        padding:"10px",
+        margin:"50px",
+        color:"yellow"
+      }
+
+      }
+      onClick={platform}>platform</button>
     </>
   )
 }
