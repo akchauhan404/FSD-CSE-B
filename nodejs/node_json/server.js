@@ -30,11 +30,11 @@ const myserver=http.createServer((req,res)=>{
     }
     if(req.method=="PUT" && req.url=='/user')
     {
-        let body=""
+        let body="";
         req.on("data",chunk=>{
             body+=chunk.toString();
         })
-        res.on("end",()=>{
+        req.on("end",()=>{
             try{
             const user=readData();
             const updateUser=JSON.parse(body);
