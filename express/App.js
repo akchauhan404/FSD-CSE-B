@@ -2,7 +2,7 @@ const express=require('express');
 const app=express();
 const port=8000;
 app.use(express.json());
-const students=[
+let students=[
     {
         id:1,
         name:"Atul",
@@ -33,6 +33,7 @@ app.get('/read',(req,res)=>{
     }
 })*/
 // data read for id
+/*
 app.get('/read/:id',(req,res)=>{
     try {
         const id=req.params.id;
@@ -46,8 +47,9 @@ app.get('/read/:id',(req,res)=>{
         res.status(500).json({message:"student data not found",error:error.message});
     }
     
-})
+})*/
 //create data
+/*
 app.post('/add',(req,res)=>{
     try {
         const newstudent={
@@ -60,8 +62,36 @@ app.post('/add',(req,res)=>{
     } catch (error) {
         res.status(500).json({message:"student not added",error:error.message});
     }
-});
+});*/
+
+
+
+
+app.get('/read',(req,res)=>{
+    res.json(students);
+})
+
+// api for delete
+app.delete('/delete/:id',(req,res)=>{
+    const id=parseInt(req.params.id);
+    students=students.filter(s=>s.id!=id);
+    res.json({message:"data delete",data:students});
+})
+// api for update
+app.put('/update/:id',(req,res)=>{
+    const id=parseInt(req.params.id);
+    const index=students.findIndex(s=>s.id==id);
+    if(index==-1)
+    res.json({message:"data not found"});
+    students[index]={
+        ...students[index],
+        ...req.body
+    }
+    res.json({message:"student added",data:students[index]});
+})
 
 app.listen(port,()=>{
     console.log(`server is running at http://localhost:${port}`)
 })
+
+
